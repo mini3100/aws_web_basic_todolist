@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/welcome.css">
+    <link rel="stylesheet" href="./css/todolist.css">
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <aside class="sidebar">
+                <button class="sidebar-toggle-button" onclick="sidebarToggleButtonOnClickHandle()">▶</button>
+                <h1 class="sidebar-logo">MyToDo</h1>
+                <ul class="sidebar-menu-list">
+                    <li class="menu-items isMenuSelected" onclick="sidebarMenuOnClickHandle(this)">시작하기</li>
+                    <li class="menu-items" onclick="sidebarMenuOnClickHandle(this)">TODOLIST</li>
+                </ul>
+            </aside>
+            <main class="main-container">
+                <div class="welcome-page-container invisible">
+                    <h1 class="welcome-page-title">TODOLIST</h1>
+                    <button class="write-link-button" onclick="gotoWriteOnClickHandle()">Go to write</button>
+                </div>
+                <div class="todolist-page-container">
+                    <header>
+                        <div class="todolist-header-items">
+                            <input type="text" class="text-input w-f" placeholder="Please enter todo...">
+                        </div>
+                        <div class="todolist-header-items">
+                            <button class="btn w-f">추가</button>
+                        </div>
+                    </header>
+                    <ul class="todolist-main-container">
+                        <li class="todolist-items">
+                            <div class="item-left">
+                                <input type="checkbox" id="complet-chkbox1" class="complet-chkboxs">
+                                <label for="complet-chkbox1"></label>
+                            </div>
+                            <div class="item-center">
+                                <pre class="todolist-content">오늘 할 일을 출력합니다.</pre>
+                            </div>
+                            <div class="item-right">
+                                <p class="todolist-date">2023-08-03</p>
+                                <div class="todolist-item-buttons">
+                                    <button class="btn btn-edit">수정</button>
+                                    <button class="btn btn-remove">삭제</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+    <script src="./js/routes.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/welcome.js"></script>
+</body>
+</html>
