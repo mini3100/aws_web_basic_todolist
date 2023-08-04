@@ -1,0 +1,62 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000000bb;
+}
+.modal-container {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 15px 20px;
+    width: 300px;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 20px;
+    width: 300px;
+}
+
+.modal-message {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+.modal-main > *:not(.modal-main :nth-last-child(1)) {
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 20px;
+    width: 300px;
+}
+
+/* 마지막 자식이 아닌 것들만 적용 */
+.modal-footer .btn:not(.modal-footer :nth-last-child(1)) {
+    margin-right: 5px;
+}

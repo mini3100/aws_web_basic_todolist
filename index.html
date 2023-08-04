@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./css/welcome.css">
     <link rel="stylesheet" href="./css/todolist.css">
@@ -22,44 +23,53 @@
                 </ul>
             </aside>
             <main class="main-container">
-                <div class="welcome-page-container invisible">
+                <div class="welcome-page-container">
                     <h1 class="welcome-page-title">TODOLIST</h1>
                     <button class="write-link-button" onclick="gotoWriteOnClickHandle()">Go to write</button>
                 </div>
-                <div class="todolist-page-container">
+                <div class="todolist-page-container invisible">
                     <header>
                         <div class="todolist-header-items">
-                            <input type="text" class="text-input w-f" placeholder="Please enter todo...">
+                            <input type="text" class="text-input w-f" 
+                                placeholder="Please enter todo..." onkeyup="addTodoOnKeyUpHandle(event)">
                         </div>
                         <div class="todolist-header-items">
-                            <button class="btn w-f">추가</button>
+                            <button class="btn w-f" onclick="addTodoButtonOnClickHandle()">추가</button>
                         </div>
                     </header>
                     <ul class="todolist-main-container">
-                        <li class="todolist-items">
-                            <div class="item-left">
-                                <input type="checkbox" id="complet-chkbox1" class="complet-chkboxs">
-                                <label for="complet-chkbox1"></label>
-                            </div>
-                            <div class="item-center">
-                                <pre class="todolist-content">오늘 할 일을 출력합니다.</pre>
-                            </div>
-                            <div class="item-right">
-                                <p class="todolist-date">2023-08-03</p>
-                                <div class="todolist-item-buttons">
-                                    <button class="btn btn-edit">수정</button>
-                                    <button class="btn btn-remove">삭제</button>
-                                </div>
-                            </div>
-                        </li>
+                        <!-- todolist li -->
                     </ul>
                 </div>
             </main>
+            <div class="modal invisible">
+                <div class="modal-container">
+                    <header class="modal-header">
+                        <h1 class="modal-title">
+                            제목
+                        </h1>
+                    </header>
+                    <main class="modal-main">
+                        <p class="modal-message">
+                            메세지 내용
+                        </p>
+                        <input type="text" class="text-input w-f">
+                    </main>
+                    <footer class="modal-footer">
+                        <button class="btn">확인</button>
+                        <button class="btn">닫기</button>
+                    </footer>
+                </div>
+            </div>
+            
         </div>
     </div>
     <script src="./js/index.js"></script>
+    <script src="./js/utils.js"></script>
     <script src="./js/routes.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/welcome.js"></script>
+    <script src="./js/todolist.js"></script>
 </body>
 </html>
